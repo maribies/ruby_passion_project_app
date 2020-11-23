@@ -8,6 +8,9 @@ Find And Seek is a Python passion project turned into Ruby on Rails completed to
 
 To run locally - `rails server`
 
+To scrape data:
+* For Chanel: `rails scraping:run[chanel]` or `rails scraping:run[Chanel]`
+
 * System dependencies
 
 * Configuration
