@@ -1,18 +1,15 @@
-require "scraping/get_html"
+require "scraping/chanel/chanel_products"
 
-desc "Get HTML data for parsing."
+desc "Get and create data from designer sites."
 
 namespace :scraping do
   task :run, [:arg_1] => [] do |task, args|
     argument_1 = args.arg_1
     puts "Getting document for #{argument_1}"
 
-    url = 'https://www.chanel.com/us/fashion/handbags/c/1x1x1/?requestType=ajax&page=1&totalElementsCount=24' if argument_1 == "chanel" || argument_1 == "Chanel"
-    
-    doc = GetHtml.run(url)
+     ChanelProducts.get_all_products_info if argument_1 == "chanel" || argument_1 == "Chanel"
 
-    puts "Document returned"
-
-    return doc
+    puts "Done"
   end
 end
+ 
